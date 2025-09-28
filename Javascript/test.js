@@ -4,7 +4,34 @@ const prompts = require('prompts');
 
 var myGlobal = "Neptune";
 
+class Vegetable {
+    constructor(name) {
+        this._name = name;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(value) {
+        this._name = value;
+    }
+
+
+}
+
 async function main() {
+
+
+    const s = [5, 7, 2]
+    Object.freeze(s)
+    // s.push(99)
+
+
+    console.log("the s array:" + s)
+    editInPlace()
+
+
 
     let theObject = {
         "firstName": "Bob",
@@ -38,6 +65,22 @@ async function main() {
 
     convertToInt("10101") > 3 ? console.log("really awesome") : console.log("not awesome");
 
+    const sweetFunc = (param) => console.log("sweet:" + param);
+
+
+    sweetFunc("argument");
+
+    infinityFunc("monkey")
+    infinityFunc("monkey", "banana")
+    infinityFunc("monkey", "banana", "apple")
+
+    // THIS IS AN EASY TO MAKE ADAPTIVE STRINGS
+    const easyString = `These are easy strings. For example "${theObject.age}" see!`;
+
+    console.log(easyString);
+
+    const carrot = new Vegetable("bugs bunny favorite");
+    console.log(carrot.name);
 }
 
 main();
@@ -82,3 +125,26 @@ function dummyStuff() {
 function convertToInt(stringy) {
     return parseInt(stringy, 2);
 }
+
+function editInPlace() {
+    "use strict";
+
+    // s[0] = 2;
+    // s[1] = 5;
+    // s[2] = 7;
+
+    // cons
+
+}
+
+function infinityFunc(...params) {
+    const inifityArr = []
+    for (let i of params) {
+        inifityArr.push(i);
+    }
+
+    console.log(inifityArr);
+}
+
+
+
