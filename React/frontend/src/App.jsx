@@ -1,6 +1,8 @@
 
 import './App.css'
 import MovieCard from './components/MovieCard'
+import Home from './pages/Home'
+
 
 function App() {
   const movieNumber = 1
@@ -12,12 +14,16 @@ function App() {
   return (
     <>
 
+
+      <Home />
+
+
       {/* THIS IS CONDITIONAL RENDERING  */}
-      {movieNumber === 1 ? (
+      {/* {movieNumber === 1 ? (
         <MovieCard movie={{ title: "jamals film", release_date: "1999" }} />
       ) : (
         <MovieCard movie={{ title: "Ursulas blovkbuster", release_date: "2004" }} />
-      )}
+      )} */}
     </>
   );
 }
@@ -31,3 +37,4 @@ function Monkey({ value }) {
 }
 
 export default App
+
