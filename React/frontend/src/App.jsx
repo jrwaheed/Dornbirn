@@ -1,8 +1,10 @@
 
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import MovieCard from './components/MovieCard'
+import Favorites from './pages/Favorites'
 import Home from './pages/Home'
-
+import NavBar from './components/NavBar'
 
 function App() {
   const movieNumber = 1
@@ -12,29 +14,17 @@ function App() {
   ARE THE OBJECT.*/
 
   return (
-    <>
+    <div>
+      <NavBar />
+      <main className='main-content'>
 
-
-      <Home />
-
-
-      {/* THIS IS CONDITIONAL RENDERING  */}
-      {/* {movieNumber === 1 ? (
-        <MovieCard movie={{ title: "jamals film", release_date: "1999" }} />
-      ) : (
-        <MovieCard movie={{ title: "Ursulas blovkbuster", release_date: "2004" }} />
-      )} */}
-    </>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/favorites' element={<Favorites />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
-
-
-function Monkey({ value }) {
-  return (
-    <div>
-    </div>
-  )
-}
-
 export default App
 
