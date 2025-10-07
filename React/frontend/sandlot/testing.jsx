@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getPolyForexQuotes } from '../src/services/api';
+import { getPolyExhangeRate } from '../src/services/api';
 
 function Dummy() {
 
@@ -9,7 +9,7 @@ function Dummy() {
 
     const fetchExchangeRate = async (baseCurrency, quoteCurrency) => {
         try {
-            const rate = await getPolyForexQuotes(baseCurrency, quoteCurrency);
+            const rate = await getPolyExhangeRate(baseCurrency, quoteCurrency);
             setRate(rate);
             alert("The exchange rate is: ", rate);
         } catch (error) {

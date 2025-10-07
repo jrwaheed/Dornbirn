@@ -1,9 +1,7 @@
-const API_KEY = "5508222ddf152392d9360608dd09fbc6"
-const BASE_URL = "https://api.themoviedb.org/3"
-const EXCHANGE_API_KEY = "uYymBFLYdj1C8SARGCUeSpp6iqtRClc6"
+
 
 import { restClient } from '@polygon.io/client-js'
-const rest = restClient(EXCHANGE_API_KEY, 'https://api.polygon.io');
+
 
 export const getPopularMovies = async () => {
     const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`)
@@ -19,17 +17,17 @@ export const searchMovies = async (query) => {
 
 
 
-export const getPolyForexQuotes = async (baseCurrency, quoteCurrency) => {
 
-    const { restClient } = require("@polygon.io/client-js")
-    const rest = restClient(EXCHANGE_API_KEY)
-    debugger
-    rest.stocks
-        .aggregates("AAPL", 1, "day", "2019-01-01", "2019-02-01")
-        .then((data) => {
-            console.log(data)
-        })
-        .catch((e) => {
-            console.error("An error happened:", e)
-        })
+export async function getPolyExhangeRate() {
+
+    const rest = restClient(EXCHANGE_API_KEY, 'https://api.polygon.io');
+
+    try {
+        console.log
+        const response = await rest.getMarketStatus();
+        console.log('Response:', response);
+    } catch (e) {
+        console.log('An error happened:', e);
+        console.error('Error message:', e.message);
+    }
 }
