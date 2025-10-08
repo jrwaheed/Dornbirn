@@ -1,24 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getPolyExhangeRate } from '../src/services/api';
+import { getWeatherData } from '../src/services/weatherapi';
 
 function Dummy() {
 
     const [baseState, setBase] = useState();
     const [quoteState, setQuote] = useState();
     const [rateState, setRate] = useState();
-
-    const fetchExchangeRate = async (baseCurrency, quoteCurrency) => {
-        try {
-            const rate = await getPolyExhangeRate(baseCurrency, quoteCurrency);
-            setRate(rate);
-            alert("The exchange rate is: ", rate);
-        } catch (error) {
-            console.error("Error fetching exchange rate:", error);
-        }
-    }
-    // useEffect(() => {
-    //     fetchExchangeRate()
-    // }, [baseCurrency, quoteCurrency]);
 
 
 

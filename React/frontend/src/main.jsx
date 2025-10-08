@@ -5,14 +5,17 @@ import './css/index.css'
 import '../sandlot/testing.css'
 import App from './App.jsx'
 import Dummy from '../sandlot/testing.jsx'
-
+import UseHooks from '../sandlot/ReactTestingArea.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
+    {/* // <StrictMode> */}
     {/* <BrowserRouter>
       <App />
-    </BrowserRouter> */}
-    <Dummy />
-  </StrictMode>,
+      </BrowserRouter> */}
+    {/* <Dummy /> */}
+    <UseHooks />
+    {/* // </StrictMode>, */}
+  </>
 )
 
