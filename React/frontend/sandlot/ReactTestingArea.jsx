@@ -1,30 +1,24 @@
 import { useEffect } from "react"
 import { useState } from "react"
-
+import { ShowReactImages } from "./ReactComponents";
+import { ShowReactList } from "./ReactComponents";
+import { UseEventhandler } from "./ReactComponents";
 
 //AT ITS MOST BASIC LEVEL, A COMPONENT IS A FUNCTION THAT RETURNS A PIECE OF UI
 
 function UseHooks() {
-
-    const coolImage = {
-        name: 'Yummy Food',
-        imgUrl: 'https://i.imgur.com/IVN7yYA.jpeg',
-        imageSize: 90,
-
-    }
-
-
     const [counter, setCounter] = useState(0);
-
 
     useEffect(() => {
         alert("useEffect called")
     }, [interfaceSwitch]);
 
 
+    let imageContent
+    let listContent
 
     var interfaceSwitch = false;
-    var content;
+
 
     const addToCounter = () => {
         setCounter(counter + 1);
@@ -35,10 +29,12 @@ function UseHooks() {
         if (counter > 5) {
             interfaceSwitch = true;
             alert("interface switched");
-            content = <img src={coolImage.imgUrl} alt={coolImage.name} width={coolImage.imageSize} />
-        } else {
-            content = <p>Counter is less than 5</p>
         }
+    }
+
+    if (counter > 5) {
+        imageContent = <ShowReactImages />;
+        listContent = <ShowReactList />;
     }
 
     return (
@@ -46,7 +42,10 @@ function UseHooks() {
             <p> using react hooks</p>
             <p > {counter} </p>
             <button onClick={addToCounter}> Add to counter </button>
-            <div> {content} </div>
+            <div> {imageContent} </div>
+
+            <div> {listContent} </div>
+            <div><UseEventhandler /></div>
         </>
     )
 }

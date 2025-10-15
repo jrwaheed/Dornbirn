@@ -6,6 +6,7 @@ import '../sandlot/testing.css'
 import App from './App.jsx'
 import Dummy from '../sandlot/testing.jsx'
 import UseHooks from '../sandlot/ReactTestingArea.jsx'
+import Square from '../TicTacToe/App.js'
 
 createRoot(document.getElementById('root')).render(
   <>
@@ -14,7 +15,8 @@ createRoot(document.getElementById('root')).render(
       <App />
       </BrowserRouter> */}
     {/* <Dummy /> */}
-    <UseHooks />
+    {/* <UseHooks /> */}
+    <Square />
     {/* // </StrictMode>, */}
   </>
 )
