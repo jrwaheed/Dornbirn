@@ -1,21 +1,8 @@
-import { useState } from 'react'
-
 import Square from "./SquareComponent"
 
-export default function Board() {
-    const [xIsNext, setXIsNext] = useState(true);
-    const [squares, setSquares] = useState(Array(9).fill(null));
-    const winner = calculateWinner(squares);
-
-    let status;
-    if (winner) {
-        status = "Winner:" + winner;
-    } else {
-        status = "Next player: " + (xIsNext ? "X" : "O");
-    }
-
+export default function Board({xIsNext, squares, onPlay} ) {
     let handleClick = (i) => {
-        if (squares[i] || calculateWinner(i)) {
+        if (calculateWinner(squares) || squares[i]  ) {
             return;
         }
 
@@ -25,9 +12,15 @@ export default function Board() {
         } else {
             nextSquares[i] = 'O';
         }
+        onPlay(nextSquares)
+    }
 
-        setSquares(nextSquares);
-        setXIsNext(!xIsNext);
+    const winner = calculateWinner(squares);
+    let status;
+    if (winner) {
+        status = "Winner:" + winner;
+    } else {
+        status = "Next player: " + (xIsNext ? "X" : "O");
     }
 
 
