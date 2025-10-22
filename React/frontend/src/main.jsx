@@ -3,10 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './css/index.css'
 import '../sandlot/testing.css'
-import App from './App.jsx'
-import Dummy from '../sandlot/testing.jsx'
-import UseHooks from '../sandlot/ReactTestingArea.jsx'
-import Square from '../TicTacToe/App.js'
+import Game from '../TicTacToe/Game.jsx'
+import '../TicTacToe/styles.css'
 
 createRoot(document.getElementById('root')).render(
   <>
@@ -16,7 +14,7 @@ createRoot(document.getElementById('root')).render(
       </BrowserRouter> */}
     {/* <Dummy /> */}
     {/* <UseHooks /> */}
-    <Square />
+    <Game />
     {/* // </StrictMode>, */}
   </>
 )
