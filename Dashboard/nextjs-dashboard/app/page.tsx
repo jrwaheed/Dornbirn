@@ -10,7 +10,7 @@ export default function Page() {
     <main className="flex min-h-screen flex-col p-6">
       <div className = {styles.shape}/>
 
-      <p className = "text-center font-bold text-green-500">Monkey</p>
+      <p className = "text-center font-bold text-green-500">Monkey Business</p>
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
         <AcmeLogo />
       </div>
